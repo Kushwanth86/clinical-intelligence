@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clinical Intelligence Copilot</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <div class="eyebrow">CLINICAL INTELLIGENCE</div>
+      <h1>Clinical Intelligence Copilot</h1>
+      <p>Evidence-based patient record review using synthetic data.</p>
+    </div>
+    <div class="status"><span></span> Prototype</div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <div class="label">PATIENT</div>
+        <h2 id="patientName">P001</h2>
+        <p id="patientMeta">52 years · Hypertension · Type 2 diabetes</p>
+      </div>
+      <div class="latest">
+        <div class="label">LATEST VISIT</div>
+        <strong id="latestDate">2026-06-15</strong>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="label">ASK THE COPILOT</div>
+            <h3>Ask about this patient</h3>
+          </div>
+        </div>
+
+        <div class="question-row">
+          <input id="question" type="text" value="What medications is the patient taking?" />
+          <button id="askButton">Ask</button>
+        </div>
+
+        <div id="answer" class="answer empty">
+          Ask a question to see an evidence-backed response.
+        </div>
+
+        <div id="evidence" class="evidence"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="label">LONGITUDINAL REVIEW</div>
+            <h3>Recent changes</h3>
+          </div>
+          <button id="compareButton" class="secondary">Compare visits</button>
+        </div>
+
+        <div id="changes" class="changes">
+          <div class="empty">Click “Compare visits” to review changes.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card disclaimer">
+      <strong>Prototype notice</strong>
+      <span>This tool uses synthetic patient data and provides decision-support information only. It does not diagnose conditions or replace clinician review.</span>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
