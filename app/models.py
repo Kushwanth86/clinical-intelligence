@@ -43,3 +43,20 @@ class ComparisonReport(BaseModel):
     latest_visit: str
     changes: List[Change]
     summary: List[str]
+
+
+class AskRequest(BaseModel):
+    patient: PatientRecord
+    question: str
+
+
+class Evidence(BaseModel):
+    visit_date: str
+    source_type: str
+    content: str
+
+
+class AskResponse(BaseModel):
+    question: str
+    answer: str
+    evidence: List[Evidence]
