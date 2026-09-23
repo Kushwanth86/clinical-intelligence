@@ -333,9 +333,15 @@ def answer_question(
 
             for lab in labs:
 
+                display_value = (
+                    str(int(lab.value))
+                    if float(lab.value).is_integer()
+                    else str(lab.value)
+                )
+
                 items.append(
                     f"{lab.name} "
-                    f"({lab.value} {lab.unit})"
+                    f"({display_value} {lab.unit})"
                 )
 
                 evidence.append({
