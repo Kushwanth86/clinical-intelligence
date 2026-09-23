@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 
@@ -22,7 +22,10 @@ def home():
 
 @app.post("/compare", response_model=ComparisonReport)
 def compare(patient: PatientRecord):
-    return compare_visits(patient)
+    try:
+        return compare_visits(patient)
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc))
 
 
 @app.post("/ask", response_model=AskResponse)
